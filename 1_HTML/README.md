@@ -93,14 +93,36 @@
 ```html
 <!DOCTYPE html> <!--문서형식-->
 <html lang = "ko"> <!-- 기본 언어 설정-->
-    <head></head>
+    <head>
+        <title>문서 제목</title>
+    </head>
     <body></body>
 </html>    
 ```
 - !DOCTYPE html : 현재 문서가 HTML5 언어로 작성된 웹 문서
 - html : 웹 문서의 시작과 끝
+- head : 웹 문서의 정보
+- body : 실제 웹 브라우저에 나타날 내용
 
+##  head에 많이 쓰는 태그
 
+1. title : 문서의 제목
+2. meta : 문서의 속성
+
+## meta 태그 
+
+```html
+<meta charset = "UTF-8"> <!-- 문자 세트 지정 -->
+<meta name = "viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일 기기-->
+<meta http-equiv="X-UA-Compatible" content = "ie=edge"> <!-- 인터넷 익스플로러 브라우저-->
+
+<!--검색 엔진-->
+<meta name = "keywords" content = "키워드1, 키워드2">
+<meta name = "description" content = "문서 설명">
+<meta name = "author" content = "문서 작성자">
+```
+
+- keywords를 사용함으로 옛날에는 검색되게끔 했지만 과한 키워드 추가로 현재는 검색엔진에서 사용하지 않는다. (구글은 가능)
 
 
 
