@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱 태그</title>
+</head>
+<body>
+    <h2>레이아웃1: div</h2> 
+    <!--기본적으로 헤더, 메인, 푸터로 나눔-->
+    <div id="header">
+        <h1>LOGO </h1> <!--h1은 보통 한 페이지에 한 개, 대개 로고-->
+        <!-- <div id="gnb"> -->
+        <!-- GNB(Global Navigation Bar) 보통 카테고리 메뉴,,움직이지 않고 고정된,,,   -->
+        <!-- </div> -->
+    </div>
+   
+    <div id="gnb">
+      GNB(Global Navigation Bar) <!--보통 카테고리 메뉴,,움직이지 않고 고정된,,,-->  
+    </div>
+    
+    <div id="main">
+        <div id="main_content">
+            <div id="main_image">
+                Main Image
+            </div>
+            
+            <div id="main_cont_wrap">
+                <div class="content">   <!--content는 여러 개 쓸 수 있음-->
+                 <h2>Title1</h2>
+                 <p>Content1</p>
+                </div>
+             
+                <div class="content">
+                 <h2>Title2</h2>
+                 <p>content2</p>
+                </div>
+              
+            </div>
+          
+        </div>
+      
+        <div id="side_bar">
+            LNB(Local Navigation Bar)
+        </div>
+     
+    </div>
+    
+    <div id="footer">
+      Footer  
+    </div>
+    
+
+    <h2>레이아웃2: Semantic Tag</h2> 
+    <!--기본적으로 헤더, 메인, 푸터로 나눔-->
+    <header>
+        <h1>LOGO </h1> <!--h1은 보통 한 페이지에 한 개, 대개 로고-->
+        <!-- <div id="gnb"> -->
+        <!-- GNB(Global Navigation Bar) 보통 카테고리 메뉴,,움직이지 않고 고정된,,,   -->
+        <!-- </div> -->
+    </header>
+   
+    <nav>
+      GNB(Global Navigation Bar) <!--보통 카테고리 메뉴,,움직이지 않고 고정된,,,-->  
+    </nav>
+    
+    <main>
+        <div id="main_content">
+            <section id="main_image">
+                Main Image
+            </section>
+            
+            <section id="main_cont_wrap">
+                <article class="content">   <!--content는 여러 개 쓸 수 있음-->
+                 <h2>Title1</h2>
+                 <p>Content1</p>
+                </article>
+             
+                <article class="content">
+                 <h2>Title2</h2>
+                 <p>content2</p>
+                </article>
+              
+            </section>
+          
+        </div>
+      
+        <aside>
+            LNB(Local Navigation Bar)
+        </aside>
+     
+    </main>
+    
+    <footer>
+      Footer  
+    </footer>
+</body>
+</html>
