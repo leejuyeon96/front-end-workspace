@@ -61,5 +61,11 @@ div[class$=ss]{
     background: yellow;
 }
 #test2+ul {
-    background: pink;
+    background: pink; /*아무것도 선택안됨*/
+}
+#test2~div{
+    background: skyblue;
+}
+#test2~ul {
+    background: deeppink;
 }
