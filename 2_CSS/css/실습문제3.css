@@ -10,6 +10,7 @@ header {
 }
 
 .header-content {
+    
     position: absolute;
     top: 0;
     left: 0;
@@ -39,13 +40,13 @@ main {
 
 .header-content h1 {
     font-size: 5rem;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     border-bottom: 3px solid white;
     padding-bottom: 15px;
 }
 
 .header-content ul {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 180px;
 }
 
