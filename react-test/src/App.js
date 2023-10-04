@@ -1,6 +1,6 @@
-import "./App.css";
-// 6. 각 ui 전환은 react-router-dom 라이브러리를 사용합니다.
 import { useState } from "react";
+import "./App.css";
+// 6. 각 UI의 전환은 react-router-dom 라이브러리를 사용합니다.
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 // 1. 모든 코드는 함수형 컴포넌트를 기반으로 합니다.
@@ -17,17 +17,17 @@ const Home = ({ list, deleteMovie }) => {
             <th>ID</th>
             <th width="80">Title</th>
             <th>Genre</th>
-            <th width="120">ReleaseDate</th>
+            <th width="120">Release Date</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
           {list.map((item) => (
             <tr key={item.id}>
-              <td>{item.id} </td>
-              <td>{item.title} </td>
-              <td>{item.genre} </td>
-              <td>{item.releaseDate} </td>
+              <td>{item.id}</td>
+              <td>{item.title}</td>
+              <td>{item.genre}</td>
+              <td>{item.releaseDate}</td>
               <td>
                 <button onClick={onClick} id={item.id}>
                   Delete
@@ -40,8 +40,9 @@ const Home = ({ list, deleteMovie }) => {
     </>
   );
 };
+
 const Create = ({ addMovie }) => {
-  // 8. 신규등록 페이지에서 addMovie버튼을 누르면 입력 후, 모든 입력 필드는 깨끗하게 비워주세요
+  // 8. 신규 등록 페이지에서 addMovie 버튼을 누르면 입력 후, 모든 입력 필드는 깨끗하게 비워주세요
   const [id, setId] = useState("");
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
@@ -52,7 +53,7 @@ const Create = ({ addMovie }) => {
 
     // 9. 모든 값은 반드시 입력되어야 합니다.
     if (id === "" || title === "" || genre === "" || releaseDate === "") {
-      alert("모든 입력값을 반드시 입력해야 합니다.");
+      alert("모든 입력값을 반드시 입력해야 합니다!");
       return;
     }
 
@@ -62,6 +63,7 @@ const Create = ({ addMovie }) => {
     setGenre("");
     setReleaseDate("");
   };
+
   return (
     <>
       <h1>Create Movie</h1>
@@ -93,7 +95,7 @@ const Create = ({ addMovie }) => {
         <div>
           <label>출시일 : </label>
           <input
-            type="Date"
+            type="date"
             value={releaseDate}
             onChange={(e) => setReleaseDate(e.target.value)}
           />
@@ -103,9 +105,9 @@ const Create = ({ addMovie }) => {
     </>
   );
 };
-const App = () => {
-  // 3. 기능은 신규 등록(Create), 목록 출력(read), 삭제(delete)를 구현합니다.
 
+const App = () => {
+  // 3. 기능은 신규 등록(create), 목록 출력(read), 삭제(delete)를 구현합니다.
   // 7. 데이터 저장소는 객체 배열을 사용하며 state로 관리합니다.
   const [movies, setMovies] = useState([
     {
@@ -129,24 +131,21 @@ const App = () => {
   ]);
 
   const addMovie = (id, title, genre, releaseDate) => {
-    //10. 중복된 ID는 입력 될 수 없습니다.
-    // 1. for문
+    // 10. 중복되는 ID는 입력 될 수 없습니다.
     // for (const item of movies) {
     //   if (item.id === parseInt(id)) {
     //     alert("중복되는 ID는 입력할 수 없습니다!");
     //     return;
     //   }
     // }
-    // 2.
     const result = movies.some((item) => {
-      // 있으면 true  없으면 false
+      // 있으면 true, 없으면 false
       return item.id === parseInt(id);
     });
     if (result) {
       alert("중복되는 ID는 입력할 수 없습니다!");
       return;
     }
-
     const newMovie = { id: parseInt(id), title, genre, releaseDate };
     setMovies([...movies, newMovie]);
   };
@@ -155,7 +154,6 @@ const App = () => {
     const newList = movies.filter((item) => item.id !== parseInt(id));
     setMovies(newList);
   };
-
   return (
     <BrowserRouter>
       <ul>
@@ -163,11 +161,11 @@ const App = () => {
           <Link to="/">List</Link>
         </li>
         <li>
-          <Link to="/create">Add new Movie</Link>
+          <Link to="/create">Add New Movie</Link>
         </li>
       </ul>
       <Routes>
-        {/* 4. 데이터 및 데이터 관련 기능은 모두 app 컴포넌트에서 제작하여 각 컴포넌트에 필요한 항목만 전달합니다.  */}
+        {/* 4. 데이터 및 데이터 관련 기능은 모두 App 컴포넌트에서 제작하여 각 컴포넌트에 필요한 항목만 전달합니다 */}
         <Route
           path="/"
           element={<Home list={movies} deleteMovie={deleteMovie} />}
